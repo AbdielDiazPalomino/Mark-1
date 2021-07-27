@@ -1,0 +1,12 @@
+#Este es mi primer miniprograma exitoso
+#alegrate abdol xD
+#LOGRO DESBLOQUEADO: EL PRIMERO DE MUCHOS
+#este hace si un numero es par o impar
+#el % hace dividir al numero hasta que su
+#RESIDUO sea 0, ya que si es otro numero no es par.
+
+num=input("inserta un número: ")
+if int(num)%2 ==0:
+    print("es par")
+else:
+    print("es impar ps")
