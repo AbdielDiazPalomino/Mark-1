@@ -1,0 +1,9 @@
+#Este supuestamente es un juego llamado 
+#historias locas.
+#sinceramente una decepción ya que esperabamos algo más
+#evidentemente lo lograste sin siquiera ver el video
+#LOGRO DESBLOQUEADO: "JUEGO SIN SENTIDO XD"
+
+word = input("pon una palabra xd: ")
+
+print("jaja momento " + word + " abdiel es genial")
