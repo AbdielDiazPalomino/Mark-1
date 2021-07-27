@@ -1,0 +1,10 @@
+#esto hace que un numero que insertes
+#lo divida entre 3 hasta que su residuo sea 0 para
+#saber que si es multiplo de 3, si su resudio no es 0
+#no es multiplo de 3, mas info en mark-1
+
+num=input("inserta un número: ")
+if int(num)%3 ==0:
+    print("si es múltiplo")
+else:
+    print("no es múltiplo")
