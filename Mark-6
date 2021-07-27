@@ -1,0 +1,12 @@
+#Esto es como un tipo de inicio de sesión
+#con clave y todo
+#Eres grande abdol
+
+name =input("Nombre: ")
+lastname = input("Apellido: ")
+key = input("Clave: ")
+
+if key == "abdielxd":
+    print("Bienvenido señor "+ lastname)
+else:
+    print("Acceso denegado señor " + lastname)
