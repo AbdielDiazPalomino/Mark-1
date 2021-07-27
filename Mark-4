@@ -1,0 +1,18 @@
+#Lo lograste,tu primer obejetivo logrado
+#LOGRO DESBLOQUEADO: GRAN LOGRO!
+#Esto da la cantidad de divisores de un número
+
+num = int(input("inserta un número: "))
+di = 1
+if num > 100000:
+    print ("solo admite hasta 1000")
+else:
+    while di <= num:
+        num2 = num/di
+    
+        if num2/int(num2) == 1:
+            print (int(num2))
+            print ("********")
+        di = di + 1
+
+print("fin")
