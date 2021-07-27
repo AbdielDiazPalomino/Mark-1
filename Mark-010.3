@@ -1,0 +1,41 @@
+import random
+
+posibilidades = 5
+intentos = 0
+limite = 20
+
+print("Hola, cómo te llamas?")
+
+nombre=input()
+
+print("Hola " + nombre + " estoy pensando en un número del 1 al " + str(limite) +
+", intenta acertar el número.")
+
+adi = random.randint(1, limite)
+while True:
+    print("Solo tienes " + str(posibilidades) + " intentos JAJAJA, digo maincra")
+    while intentos < posibilidades:
+        num = int(input("Cual será el número?: "))
+        intentos = intentos + 1
+        if num == adi:
+            print("Felicidades, usted ganó!!!")
+            break
+        else:
+            if num > adi:
+                print("Intenta con un número más pequeño")
+            elif intentos < posibilidades:
+                print("Intenta con un número más grande")
+            
+    if num != adi:
+        print("GAME OVER")
+        intentos = intentos - intentos
+    #while True:
+        #num= int(input("Cual será el número?: "))
+    
+        #print(buscar_valor(valor))    
+    continuar = (input("Quieres continuar?\n 1 para seguir\n Y 2 para salir\n Rpta: "))
+    if continuar == "1":
+        print(">>>>CONTINUEMOS!!!<<<<")
+    else:
+        print("The end")
+        break 
