@@ -1,0 +1,47 @@
+#acá hemos hecho nuestro primer juego real xD
+#el sistema tiene un numero aleatorio y tenemos que acertarlo xD
+#LOGRO DESBLOQUEADO: FIRST GAME!
+#pero solo tenemos 2 intentos y no está automatizado con un while (bucle)
+#como para jugar varias veces.
+
+import random
+
+adi = random.randint(1, 10)
+
+print("Hola, cómo te llamas?")
+
+nombre=input()
+
+print("Hola " + nombre + " estoy pensando en un número del 1 al 10," +
+" intenta acertar el número.")
+
+print("A propósito, solo tienes 3 intentos JAJAJA, digo maincra")
+
+pr = int(input("Ingrese el posible número: "))
+
+if pr == adi:
+    print("¡Felicidades!\nusted ganó!")
+else:
+    if pr > adi:
+        print("Intenta con un número más pequeño")
+    else:
+        print("Intenta con un número más grande")
+
+    print("Te quedan 2 intentos")
+    pr = int(input("Intenta otra vez: "))
+
+    if pr == adi:
+        print("¡Felicidades!\nusted ganó!")
+    else:
+        if pr > adi:
+            print("Intenta con un número más pequeño")
+        else:
+            print("Intenta con un número más grande")
+
+        print("Te queda 1 intento")
+        pr= int(input("Intenta otra vez: "))
+
+        if pr == adi:
+            print("¡Felicidades!\nusted ganó!")
+        else:
+            print("GAME OVER")
