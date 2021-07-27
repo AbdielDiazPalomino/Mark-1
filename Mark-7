@@ -1,0 +1,27 @@
+# Vamos a hacer una calcu con Fe bro
+# LOGRO DESBLOQUEADO: "PENSASTE QUE NUNCA LLEGARÍA"
+
+num1 = int(input("Ingresa el primer número: "))
+opera = input("Que operación es: ")
+num2 = input("Ingresa el segundo número número: ")
+sua = int(num1) + int(num2)
+re = int(num1) - int(num2)
+mul = int(num1) * int(num2)
+di = int(int(num1) / int(num2))
+r = int(num1) % int(num2)
+
+if opera == "+":
+    print("La suma es", sua)
+
+elif opera == "-":
+    print("La resta es", re)
+
+elif opera == "*":
+    print("La multiplicación es", mul)
+
+elif opera == "/":
+    print("El conciente es", di)
+    print("El residuo es", r)
+
+else:
+    print("El operador no es valido\n""Utilice los siguientes: +, -, *, /")
