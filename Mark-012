@@ -1,0 +1,8 @@
+"""
+Bueno esto es lo mismo que mark-11 solo que acá el problema ya 
+lo hice bien planteado y ya sale con 4
+"""
+num=int(input("Inserte el número: "))
+
+print(int(num)**int(num))
+print(int(16)*(int(num)**2))
