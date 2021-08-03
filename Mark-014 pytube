@@ -1,0 +1,17 @@
+#Este programa nos permite descargar cualquier video de youtube
+import pytube
+while True:
+    try:
+        video_url = input("Inserte la URL del video: ")
+        youtube = pytube.YouTube(video_url)
+        print("Descargando...")
+        video = youtube.streams.first()
+        video.download(r'D:\Descargas')
+        
+        print("Su video se descargó correctamente")
+    except:
+        print("Verifique si la url está escrita correctamente")
+    
+    intento= input("Presione 1 para seguir descargando\nPresione 2 para salir: ")
+    if intento != "1":
+        break
