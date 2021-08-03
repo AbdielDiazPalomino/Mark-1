@@ -1,0 +1,124 @@
+import turtle
+
+#Ventana
+wn = turtle.Screen()
+wn.title("Pong by AbdolPlayer")
+wn.bgcolor("black")
+wn.setup(width = 800, height = 600)
+wn.tracer(0)
+
+#Jugador 1
+jugador1 = turtle.Turtle()
+jugador1.speed(0)
+jugador1.shape("square")
+jugador1.color("white")
+jugador1.penup()
+jugador1.goto(-350,0)
+jugador1.shapesize(stretch_wid=5, stretch_len = 1) #acá le alargamos en tamaño para q sea un restangulo
+
+#jugador 2
+jugador2 = turtle.Turtle()
+jugador2.speed(0)
+jugador2.shape("square")
+jugador2.color("white")
+jugador2.penup()
+jugador2.goto(350,0)
+jugador2.shapesize(stretch_wid=5, stretch_len = 1) #acá le alargamos en tamaño para q sea un restangulo
+
+#Pelota
+pelota = turtle.Turtle()
+pelota.speed(2)
+pelota.shape("square")
+pelota.color("white")
+pelota.penup()
+pelota.goto(0,0)
+pelota.dx = 0.3 #esto quiere decir que la pelota se va a mover en 3 pixeles
+pelota.dy = 0.3
+
+#Línea divisoria
+division = turtle.Turtle()
+division.color("white")
+division.goto(0,400) # Acá le decimos que la linea comience en arriba 
+division.goto(0,-400) # y acá le decimos que la linea ermine en el -400 osea abajo
+
+#Marcador
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0,260)
+pen.write("Jugador 1: 0     Jugador 2: 0", align = "center", font= ("Courier", 24, "normal"))
+
+marcador1= 0
+marcador2= 0
+
+#Funciones jugador1
+def jugador1_up():
+    y = jugador1.ycor()
+    y = y +20
+    jugador1.sety(y)
+
+def jugador1_down():
+    y = jugador1.ycor()
+    y = y -20
+    jugador1.sety(y)
+
+#Funciones jugador2
+def jugador2_up():
+    y = jugador2.ycor()
+    y = y +20
+    jugador2.sety(y)
+
+def jugador2_down():
+    y = jugador2.ycor()
+    y = y -20
+    jugador2.sety(y)
+
+#Teclado
+wn.listen()
+wn.onkeypress(jugador1_up, "w")
+wn.onkeypress(jugador1_down, "s")
+
+wn.onkeypress(jugador2_up, "Up")
+wn.onkeypress(jugador2_down, "Down")
+
+while True:
+    wn.update()
+
+    pelota.setx(pelota.xcor() + pelota.dx)
+    pelota.sety(pelota.ycor() + pelota.dy)
+
+    #Bordes
+    if pelota.ycor() > 290:
+        pelota.dy *= -1
+
+    if pelota.ycor() < -290:
+        pelota.dy *= -1
+
+    #Bordes derecha/izquierda
+    if pelota.xcor() > 390:
+        pelota.goto(0, 0)
+        pelota.dx *= -1
+        marcador1 += 1 
+        pen.clear()
+        pen.write(f"Jugador 1: {marcador1}     Jugador 2: {marcador2}", align = "center", font= ("Courier", 24, "normal"))
+
+
+    if pelota.xcor() < -390:
+        pelota.goto(0, 0)
+        pelota.dx *= -1
+        marcador2 += 1
+        pen.clear()
+        pen.write(f"Jugador 1: {marcador1}     Jugador 2: {marcador2}", align = "center", font= ("Courier", 24, "normal"))
+
+    #Choques con los jugadores
+    if ((pelota.xcor() > 340 and pelota.xcor() < 350)
+            and (pelota.ycor() < jugador2.ycor() + 50
+            and pelota.ycor() > jugador2.ycor() - 50)):
+        pelota.dx *= -1
+
+    if ((pelota.xcor() < -340 and pelota.xcor() > -350)
+            and (pelota.ycor() < jugador1.ycor() + 50
+            and pelota.ycor() > jugador1.ycor() - 50)):
+        pelota.dx *= -1
