@@ -1,14 +1,7 @@
-#Acá se puede ver si un número es primo o no
-#evidentemente está incompleto, ya que no lo entiendo
-#sigue adquieriendo conocimientos para comprenderlo
-#xD
-
-num = (input('Inserte un número: '))
-
 def isPrime(num):
+
     if num < 0:
         print("No se permiten números negativos")
-    
     else:    
         if num == 2:
             return True
@@ -21,11 +14,19 @@ def isPrime(num):
 def app():
 
     result = isPrime(num)
-
     if result is True:
-        print('Es un número primo')
+        print('\nEs un número primo\n')
     else:
-        print('Es un número compuesto')
+        print('\nEs un número compuesto\n')
 
-if __name__ == '__main__':
+while True:
+
+    num = int(input('Inserte un número: '))
+
     app()
+    
+    print("desea continuar?")
+    p=input("1 para sí y 2 para no: ")
+
+    if p != "1":
+        break
