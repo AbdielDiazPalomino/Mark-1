@@ -1,11 +1,21 @@
 #Este código nos saca porcentajes de cualquiere número entero
 #no admite decimales o fracciones, pero pronto lo haré
-#:D
+
+#Ahora si admite fracciones
 
 while True:
-    num = int(input("Inserte el número: "))
-    descuento = int(input("Inserte el porcentaje: "))
-    res = (int(num * (descuento / 100)))
+    num = (input("Inserte el número: "))
+    resul = eval(num) # evalua un string y lo convierte en numero
+    #por ejemplo en str("6/2") con eval evalua que es una operacion y da el resul
+
+    descuento = float(input("Inserte el porcentaje: "))
+    res = (resul * (descuento / 100))
+    if res is int:
+        print(res)
+    else:
+        print(num,"/",int(descuento/100))
+        print(res)
+
     print("La respuesta es:", res,"\n")
     
     bucle=int(input("ingrese 1 para seguir\ningrese 2 para salir\nRPTA: "))
